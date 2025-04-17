@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/otp_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  mail:
+    host: smtp.example.com
+    port: 587
+    username: email@example.com
+    password: password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+email:
+  from: email@example.com
+
+telegram:
+  token: TOKEN
+
+jwt:
+  secret: SECRET
+  #  ms
+  expiration: 86400000
+smpp:
+  host: localhost
+  port: 2775
+  system-id: smppclient1
+  password: password
+  system-type: OTP
+  source-addr: OTPService
